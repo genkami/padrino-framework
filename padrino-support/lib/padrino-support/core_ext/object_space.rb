@@ -14,7 +14,7 @@ module ObjectSpace
     def classes(&block)
       rs = Set.new
 
-      ObjectSpace.each_object(Class).each do |klass|
+      ObjectSpace.each_object(Module).each do |klass|
         if block
           if r = block.call(klass)
             # add the returned value if the block returns something
